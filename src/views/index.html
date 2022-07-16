@@ -6,28 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/public/styles.css">
-  <title>Timestamp</title>
+  <title>Request Header Parser</title>
 </head>
 
 <body>
   <header>
-    <h1>Timestamp Microservice</h1>
+    <h1>API Project: Request Header Parser Microservice</h1>
   </header>
 
   <main>
     <section>
       <h2>Example Usage:</h2>
       <p>
-        <a href="/api/2015-12-25" target="_blank">[project_url]/api/2015-12-25</a>
-      </p>
-      <p>
-        <a href="/api/1657884547301" target="_blank">[project_url]/api/1657884547301</a>
+        <a href="/api/whoami" target="_blank">[project_url]/api/whoami</a>
       </p>
     </section>
 
     <section>
       <h2>Example Output</h2>
-      <code>{"unix":1657884547301, "utc":"Fri, 15 Jul 2022 11:29:07 GMT"}</code>
+      <code>{"ipaddress":127.0.0.1,"language":"en-US,en;q=0.5","software":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"}</code>
     </section>
   </main>
 

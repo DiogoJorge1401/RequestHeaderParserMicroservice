@@ -16,6 +16,10 @@ app.get("/", (req, res) => {
 
 app.use("/api", routes);
 
-app.listen(3000, () =>
-  console.log("Server is Running on http://localhost:3000")
+const port = process.env.PORT || 3000
+
+app.listen(port, () =>
+  console.log(`Server is Running on ${port}`)
 );
+
+export default app

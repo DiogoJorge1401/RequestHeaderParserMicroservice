@@ -2,21 +2,13 @@ import { Router } from "express";
 
 const routes = Router();
 
-routes.get("/:date?", (req, res) => {
-  const parse = {
-    undefined: (v) => new Date(),
-    string: (v) => (isNaN(v) ? new Date(v) : new Date(+v))
-  };
-  const date = req.params.date as any;
-  let parsedDate = parse[typeof date](date);
+routes.get("/whoami", (req, res) => {
 
-  if (parsedDate.toString() === "Invalid Date")
-    return res.json({ error: "Invalid Date" });
+  const ipaddress = req.headers['x-forwarded-for'] || req.socket.remoteAddress
+  const language = req.headers['accept-language']
+  const software = req.headers['user-agent']
 
-  const unix = parsedDate.getTime();
-  const utc = parsedDate.toUTCString();
-
-  return res.json({ unix, utc });
+  res.json({ ipaddress, language, software })
 });
 
 export { routes };
